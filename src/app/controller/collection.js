@@ -1,11 +1,11 @@
 class Collection {
     static async all(req) {
-        const response = await fetch(`http://localhost:3000/api/v1/collection?user_id=${req.user_id}`);
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/collection?user_id=${req.user_id}`);
         return await response.json();
     }
 
     static async store(req) {
-        const response = await fetch(`http://localhost:3000/api/v1/collection`, {
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/collection`, {
             method: 'POST',
             body: JSON.stringify(req),
         });
@@ -14,12 +14,12 @@ class Collection {
     }
 
     static async show(req) {
-        const response = await fetch(`http://localhost:3000/api/v1/collection?mal_id=${req.mal_id}`);
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/collection?mal_id=${req.mal_id}`);
         return await response.json();
     }
 
     static async destroy(req) {
-        const response = await fetch(`http://localhost:3000/api/v1/collection/${req.id}`, {
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/collection/${req.id}`, {
             method: 'DELETE',
         });
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { PaperPlaneTilt } from "@phosphor-icons/react";
-import comment from '@/app/controller/comment'
+import Comment from '@/app/controller/comment'
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -11,7 +11,7 @@ export default function Header({ anime_id, getComments }) {
     const [commentUser, setCommentUser] = useState('');
 
     const addComment = async () => {
-        const data = await comment.store({ anime_id, commentUser });
+        const data = await Comment.store({ anime_id, commentUser });
 
         if(data.status == 200){
             setCommentUser('')

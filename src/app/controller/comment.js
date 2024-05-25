@@ -1,15 +1,11 @@
-class Comment{
-    constructor(){
-        this.app_url = 'http://localhost:3000';
-    }
-
-    async all(req){
-        const response = await fetch(`${this.app_url}/api/v1/comment?anime_id=${req.anime_id}`);
+class Comment {
+    static async all(req) {
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/comment?anime_id=${req.anime_id}`);
         return await response.json();
     }
 
-    async store(req){
-        const response = await fetch('/api/v1/comment', {
+    static async store(req) {
+        const response = await fetch(`${process.env.NEXTAUTH_URL}/api/v1/comment`, {
             method: 'POST',
             body: JSON.stringify(req)
         });
@@ -18,6 +14,4 @@ class Comment{
     }
 }
 
-const comment = new Comment();
-
-export default comment;
+export default Comment;
