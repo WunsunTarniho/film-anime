@@ -49,11 +49,11 @@ export default function CollectionButton({ anime }) {
         <>
             {
                 isCollection ?
-                    <button type="button" className="rounded" onClick={() => deleteCollection(collectionData.id)}>
+                    <button type="button" aria-label="removeCollectionButton" className="rounded" onClick={() => deleteCollection(collectionData.id)}>
                         <BookmarkSimple className={`text-color-primary font-bold`} size={30} weight={'fill'} />
                     </button>
                     :
-                    <button type="button" className="rounded" onClick={() => addToCollection(anime)}>
+                    <button type="button" aria-label="addCollectionButton" className="rounded" onClick={() => addToCollection(anime)}>
                         <BookmarkSimple className={`text-color-primary font-bold`} size={30} />
                     </button>
             }

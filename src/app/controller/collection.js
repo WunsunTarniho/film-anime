@@ -1,6 +1,6 @@
 class Collection {
     static async all(req) {
-        const response = await fetch(`/api/v1/collection?user_id=${req.user_id}`);
+        const response = await fetch(`https://film-anime.vercel.app/api/v1/collection?user_id=${req.user_id}`);
         return await response.json();
     }
 

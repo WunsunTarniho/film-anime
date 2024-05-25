@@ -16,7 +16,7 @@ export default function InputSearch() {
     return (
         <form className="relative w-full" id='search' onSubmit={handleSearch}>
             <input type="text" placeholder="Cari Anime..." name="search" className="w-full p-2 rounded"/>
-            <button className="absolute top-2 end-2" type="submit">
+            <button className="absolute top-2 end-2" aria-label="searchButton" type="submit">
                 <MagnifyingGlass size={24} />
             </button>
         </form>
